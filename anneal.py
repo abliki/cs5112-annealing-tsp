@@ -124,7 +124,9 @@ class SimAnneal(object):
         """
         Plot the fitness through iterations.
         """
+        plt.clf()
         plt.plot([i for i in range(len(self.fitness_list))], self.fitness_list)
         plt.ylabel("Fitness")
         plt.xlabel("Iteration")
+        plt.savefig('plot_learning.png', bbox_inches='tight')
         plt.show()

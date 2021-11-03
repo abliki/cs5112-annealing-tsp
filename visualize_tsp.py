@@ -11,7 +11,7 @@ def plotTSP(paths, points, num_iters=1):
 
     # Unpack the primary TSP path and transform it into a list of ordered
     # coordinates
-
+    plt.clf()
     x = []; y = []
     for i in paths[0]:
         x.append(points[i][0])
@@ -52,4 +52,5 @@ def plotTSP(paths, points, num_iters=1):
     #Set axis too slitghtly larger than the set of x and y
     plt.xlim(min(x)*1.1, max(x)*1.1)
     plt.ylim(min(y)*1.1, max(y)*1.1)
+    plt.savefig('plot.png', bbox_inches='tight')
     plt.show()
