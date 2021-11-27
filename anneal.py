@@ -17,6 +17,7 @@ class SimAnneal(object):
 
         self.nodes = [i for i in range(self.N)]
 
+        self.init_solution = None
         self.best_solution = None
         self.best_fitness = float("Inf")
         self.fitness_list = []
@@ -36,6 +37,7 @@ class SimAnneal(object):
             solution.append(next_node)
             cur_node = next_node
 
+        self.init_solution = solution
         cur_fit = self.fitness(solution)
         if cur_fit < self.best_fitness:  # If best found so far, update best fitness
             self.best_fitness = cur_fit
@@ -118,7 +120,8 @@ class SimAnneal(object):
         """
         Visualize the TSP route with matplotlib.
         """
-        visualize_tsp.plotTSP([self.best_solution], self.coords)
+        # visualize_tsp.plotTSP([self.best_solution], self.coords)
+        visualize_tsp.plotTSP([self.init_solution, self.best_solution], self.coords, num_iters=2)
 
     def plot_learning(self):
         """

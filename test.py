@@ -17,7 +17,8 @@ def generate_random_coords(num_nodes):
 
 
 if __name__ == "__main__":
-    coords = read_coords("coord.txt")  # generate_random_coords(100)
+    # coords = read_coords("coord.txt")  # generate_random_coords(100)
+    coords = read_coords("data/scaled_subway.txt")  # generate_random_coords(100)
     sa = SimAnneal(coords, stopping_iter=5000)
     sa.anneal()
     sa.visualize_routes()

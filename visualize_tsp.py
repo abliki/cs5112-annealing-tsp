@@ -9,9 +9,9 @@ def plotTSP(paths, points, num_iters=1):
 
     """
 
+    plt.clf()
     # Unpack the primary TSP path and transform it into a list of ordered
     # coordinates
-    plt.clf()
     x = []; y = []
     for i in paths[0]:
         x.append(points[i][0])
@@ -28,7 +28,7 @@ def plotTSP(paths, points, num_iters=1):
         for i in range(1, num_iters):
 
             # Transform the old paths into a list of coordinates
-            xi = []; yi = [];
+            xi, yi = [], []
             for j in paths[i]:
                 xi.append(points[j][0])
                 yi.append(points[j][1])
